@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP-Crontrol
 Plugin URI: http://www.scompt.com/projects/wp-crontrol
-Description: WP-Crontrol lets you view and control what's happening in the WP-Cron system.
+Description: WP-Crontrol lets you view and control what's happening in the WP-Cron system
 Author: <a href="http://www.scompt.com/" target="_blank">Edward Dale</a> & <a href="http://lud.icro.us/" target="_blank">John Blackbourn</a>
 Version: 1.1
 License: GPLv2 or later
@@ -488,10 +488,10 @@ class Crontrol {
      */
     function show_cron_form( $is_php, $existing ) {
         if( $is_php ) {
-            $helper_text = __( 'Cron entries trigger actions in your code. Using the form below, you can enter the schedule of the action, as well as the PHP code for the action itself. Alternatively, the schedule can be specified from within WordPress and the code for the action in a file on on your server using <a href="tools.php?page=crontrol_admin_manage_page&action=new-cron#crontrol_form">this form</a>.', self::ID);
+            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. Using the form below, you can enter the schedule of the action, as well as the PHP code for the action itself. Alternatively, the schedule can be specified from within WordPress and the code for the action in a file on on your server using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-cron#crontrol_form">' . __('this form', self::ID) . '</a>' ) ;
             $link = ' (<a href="tools.php?page=crontrol_admin_manage_page#crontrol_form">' . __( 'Add new entry', self::ID) . '</a>)';
         } else {
-            $helper_text = __( 'Cron entries trigger actions in your code. A cron entry added using the form below needs a corresponding action hook somewhere in code, perhaps the <code>functions.php</code> file in your theme. It is also possible to create your action hook from within WordPress using <a href="tools.php?page=crontrol_admin_manage_page&action=new-php-cron#crontrol_form">this form</a>.', self::ID);
+            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. A cron entry added using the form below needs a corresponding action hook somewhere in code, perhaps the <code>functions.php</code> file in your theme. It is also possible to create your action hook from within WordPress using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-php-cron#crontrol_form">' . __('this form', self::ID) . '</a>');
             $link = ' (<a href="tools.php?page=crontrol_admin_manage_page&amp;action=new-php-cron#crontrol_form">' . __( 'Add new PHP entry', self::ID) . '</a>)';
         }
         if( is_array($existing) ) {
@@ -559,8 +559,8 @@ class Crontrol {
 				'4' => __( 'Successfully edited the cron entry %s', self::ID),
 				'5' => __( 'Successfully created the cron entry %s', self::ID),
 				'6' => __( 'Successfully deleted the cron entry %s', self::ID),
-				'7' => __( 'Failed to the delete the cron entry %s', self::ID),
-				'8' => __( 'Failed to the execute the cron entry %s', self::ID));
+				'7' => __( 'Failed to delete the cron entry %s', self::ID),
+				'8' => __( 'Failed to execute the cron entry %s', self::ID));
             $hook = $_GET['crontrol_name'];
             $msg = sprintf($messages[$_GET['crontrol_message']], '<b>' . $hook . '</b>');
 
@@ -613,7 +613,7 @@ class Crontrol {
                                 echo "<tr id=\"cron-$hook-$sig\" class=\"$class\">";
                                 echo "<td>".($hook==CRONTROL_CRON_JOB ? sprintf( '<i>%s</i>', __( 'PHP Cron', self::ID)) : $hook)."</td>";
                                 echo "<td>".($hook==CRONTROL_CRON_JOB ? sprintf( '<i>%s</i>', __( 'PHP Code', self::ID)) : $this->json->encode($data['args']))."</td>";
-                                echo "<td>".strftime("%Y/%m/%d %H:%M:%S", $time)." (".$this->time_since(time(), $time).")</td>";
+                                echo "<td>".strftime("%Y/%m/%d %H:%M:%S", $time)." (".$this->time_since(time(), $time).")</td>"; // all entries are displayed as "now"
                                 echo "<td>".($data['schedule'] ? $data['interval'].' ('.$this->interval($data['interval']).')' : __( 'Non-repeating', self::ID))."</td>";
                                 echo "<td><a class='view' href='tools.php?page=crontrol_admin_manage_page&amp;action=edit-cron&amp;id=$hook&amp;sig=$sig&amp;next_run=$time#crontrol_form'>" . __( 'Edit') . "</a></td>";
                                 echo "<td><a class='view' href='".wp_nonce_url("tools.php?page=crontrol_admin_manage_page&amp;action=run-cron&amp;id=$hook&amp;sig=$sig", "run-cron_{$hook}_{$sig}")."'>" . __( 'Run Now', self::ID) . "</a></td>";
