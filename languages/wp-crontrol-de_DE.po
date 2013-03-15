@@ -1,170 +1,292 @@
-# German translations for PACKAGE package
-# German messages for PACKAGE.
-# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Edward Dale <>, 2008.
-#
+# Translation of WP-Crontrol in German
+# This file is distributed under the same license as the WP-Crontrol package.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-25 17:22+0200\n"
-"PO-Revision-Date: 2008-04-25 17:27+0200\n"
-"Last-Translator: Edward Dale <>\n"
-"Language-Team: German\n"
+"PO-Revision-Date: 2013-03-15 11:40:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: translate.foe-services.de/ReGlot/0.1\n"
+"Project-Id-Version: WP-Crontrol\n"
+"Language-Team: Translate.foe-services.de <translate@foe-services.de>\n"
+"Language: German\n"
 
-#: wp-crontrol.php:102 wp-crontrol.php:111
-msgid "You are not allowed to add new cron events."
-msgstr ""
+#: wp-crontrol.php:494
+msgid "Cron entries trigger actions in your code. A cron entry added using the form below needs a corresponding action hook somewhere in the code, perhaps the <code>functions.php</code> file in your theme. It is also possible to create your action hook from within WordPress using %s."
+msgstr "Cron-Einträge stoßen Aktionen im Code an. Ein Cron-Eintrag hinzugefügt mit dem Formular unten benötigt einen entsprechenden Action Hook im Code, z.B. in der <code>functions.php</code> Datei deines Themes. Alternativ kann ein Action Hook innerhalb von WordPress erstellt werden. Nutze dazu %s."
 
-#: wp-crontrol.php:122
+#: wp-crontrol.php:491
+msgid "Cron entries trigger actions in your code. Using the form below, you can enter the schedule of the action, as well as the PHP code for the action itself. Alternatively, the schedule can be specified from within WordPress and the code for the action in a file on your server using %s."
+msgstr "Cron-Einträge lösen Aktionen im Code aus. Im Formular unten kann sowohl der Zeitplan der Aktion als auch der PHP-Code der Aktion selbst festgelegt werden. Alternativ kann der Zeitplan innerhalb von WordPress festgelegt und der Code für die Aktion in einer Datei auf deinem Server hinterlegt werden. Nutze dazu %s."
+
+#: wp-crontrol.php:563
+msgid "Failed to execute the cron entry %s"
+msgstr "Cron-Eintrag %s konnte nicht ausgeführt werden"
+
+#: wp-crontrol.php:491 wp-crontrol.php:494
+msgid "this form"
+msgstr "dieses Formular"
+
+#: wp-crontrol.php:656
+msgid "%s day"
+msgid_plural "%s days"
+msgstr[0] "%s Tag"
+msgstr[1] "%s Tage"
+
+#: wp-crontrol.php:657
+msgid "%s hour"
+msgid_plural "%s hours"
+msgstr[0] "%s Stunde"
+msgstr[1] "%s Stunden"
+
+#: wp-crontrol.php:658
+msgid "%s minute"
+msgid_plural "%s minutes"
+msgstr[0] "%s Minute"
+msgstr[1] "%s Minuten"
+
+#: wp-crontrol.php:659
+msgid "%s second"
+msgid_plural "%s seconds"
+msgstr[0] "%s Sekunde"
+msgstr[1] "%s Sekunden"
+
+#: wp-crontrol.php:664
+msgid "now"
+msgstr "jetzt"
+
+#: wp-crontrol.php:532
+msgid "e.g., [], [25], [\"asdf\"], or [\"i\",\"want\",25,\"cakes\"]"
+msgstr "Beispiele: [], [25], [\"asdf\"], oder [\"i\",\"want\",25,\"cakes\"]"
+
+#: wp-crontrol.php:537
+msgid "Next run"
+msgstr "Nächste Ausführung"
+
+#: wp-crontrol.php:537
+msgid "e.g., \"now\", \"tomorrow\", \"+2 days\", or \"06/04/08 15:27:09\""
+msgstr "Beispiele: \"now\", \"tomorrow\", \"+2 days\", oder \"06/04/08 15:27:09\""
+
+#: wp-crontrol.php:540
+msgid "Entry schedule"
+msgstr "Zeitplan"
+
+#: wp-crontrol.php:558
+msgid "Successfully executed the cron entry %s"
+msgstr "Cron-Eintrag %s wurde erfolgreich ausgeführt"
+
+#: wp-crontrol.php:559
+msgid "Successfully edited the cron entry %s"
+msgstr "Cron-Eintrag %s wurde erfolgreich angepasst"
+
+#: wp-crontrol.php:560
+msgid "Successfully created the cron entry %s"
+msgstr "Cron-Eintrag %s wurde erfolgreich erstellt"
+
+#: wp-crontrol.php:561
+msgid "Successfully deleted the cron entry %s"
+msgstr "Cron-Eintrag %s wurde erfolgreich gelöscht"
+
+#: wp-crontrol.php:562
+msgid "Failed to the delete the cron entry %s"
+msgstr "Cron-Eintrag %s konnte nicht gelöscht werden"
+
+#: wp-crontrol.php:581
+msgid "WP-Cron Entries"
+msgstr "WordPress Cron-Einträge"
+
+#: wp-crontrol.php:586
+msgid "Hook Name"
+msgstr "Hook Name"
+
+#: wp-crontrol.php:588
+msgid "Next Run"
+msgstr "Nächste Ausführung"
+
+#: wp-crontrol.php:589
+msgid "Recurrence"
+msgstr "Wiederholung"
+
+#: wp-crontrol.php:596
+msgid "You currently have no cron entries. Add one below!"
+msgstr "Aktuell sind keine Cron-Einträge vorhanden. Füge einen neuen unten hinzu!"
+
+#: wp-crontrol.php:614
+msgid "PHP Cron"
+msgstr "PHP Cron"
+
+#: wp-crontrol.php:615
+msgid "PHP Code"
+msgstr "PHP Code"
+
+#: wp-crontrol.php:618
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: wp-crontrol.php:619
+msgid "Run Now"
+msgstr "Jetzt ausführen"
+
+#: wp-crontrol.php:653
+msgid "%s year"
+msgid_plural "%s years"
+msgstr[0] "%s Jahr"
+msgstr[1] "%s Jahre"
+
+#: wp-crontrol.php:654
+msgid "%s month"
+msgid_plural "%s months"
+msgstr[0] "%s Monat"
+msgstr[1] "%s Monate"
+
+#: wp-crontrol.php:655
+msgid "%s week"
+msgid_plural "%s weeks"
+msgstr[0] "%s Woche"
+msgstr[1] "%s Wochen"
+
+#: wp-crontrol.php:373 wp-crontrol.php:620
+msgid "Delete"
+msgstr "Löschen"
+
+#: wp-crontrol.php:387
+msgid "Add new cron schedule"
+msgstr "Neuen Cron-Zeitplan hinzufügen"
+
+#: wp-crontrol.php:388
+msgid "Adding a new cron schedule will allow you to schedule events that re-occur at the given interval."
+msgstr "Das Hinzufügen eines neuen Cron-Zeitplans erlaubt es Events zu planen, die entsprechend dem Intervall wiederholt ausgeführt werden."
+
+#: wp-crontrol.php:393
+msgid "Internal name"
+msgstr "Interner Name"
+
+#: wp-crontrol.php:401
+msgid "Display name"
+msgstr "Anzeigename"
+
+#: wp-crontrol.php:405
+msgid "Add Cron Schedule"
+msgstr "Cron-Zeitplan hinzufügen"
+
+#: wp-crontrol.php:434 wp-crontrol.php:617
+msgid "Non-repeating"
+msgstr "Nicht-wiederholend"
+
+#: wp-crontrol.php:477
+msgid "There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron jobs on your site may not work. The problem was: %s"
+msgstr "Es ist ein Problem beim Erzeugen des Ausrufs an das WP-Cron-System deiner Seite aufgetreten. Dies bedeutet, dass WP-Cron Jobs möglicherweise nicht funktionieren. Das Problem war: %s"
+
+#: wp-crontrol.php:492
+msgid "Add new entry"
+msgstr "Neuen Eintrag hinzufügen"
+
+#: wp-crontrol.php:495
+msgid "Add new PHP entry"
+msgstr "Neuen PHP-Eintrag hinzufügen"
+
+#: wp-crontrol.php:505
+msgid "Modify PHP Cron Entry"
+msgstr "PHP-Cron-Eintrag bearbeiten"
+
+#: wp-crontrol.php:505
+msgid "Modify Cron Entry"
+msgstr "Cron-Eintrag bearbeiten "
+
+#: wp-crontrol.php:511
+msgid "Add PHP Cron Entry"
+msgstr "PHP-Cron-Eintrag hinzufügen"
+
+#: wp-crontrol.php:511
+msgid "Add Cron Entry"
+msgstr "Cron-Eintrag hinzufügen"
+
+#: wp-crontrol.php:523
+msgid "Hook code"
+msgstr "Hook Code"
+
+#: wp-crontrol.php:528
+msgid "Hook name"
+msgstr "Hook Name"
+
+#: wp-crontrol.php:532 wp-crontrol.php:587
+msgid "Arguments"
+msgstr "Argumente"
+
+#: wp-crontrol.php:107 wp-crontrol.php:117
+msgid "You are not allowed to edit cron events."
+msgstr "Du bist nicht berechtigt Cron-Events anzupassen."
+
+#: wp-crontrol.php:129
 msgid "You are not allowed to add new cron schedules."
-msgstr ""
-
-#: wp-crontrol.php:147
-msgid "You are not allowed to delete cron schedules."
-msgstr ""
+msgstr "Du bist nicht berechtigt neue Cron-Zeitpläne hinzuzufügen."
 
 #: wp-crontrol.php:154
-msgid "You are not allowed to delete cron events."
-msgstr ""
+msgid "You are not allowed to delete cron schedules."
+msgstr "Du bist nicht berechtigt Cron-Zeitpläne zu löschen."
 
 #: wp-crontrol.php:161
+msgid "You are not allowed to delete cron events."
+msgstr "Du bist nicht berechtigt Cron-Events zu löschen."
+
+#: wp-crontrol.php:173
 msgid "You are not allowed to run cron events."
-msgstr ""
+msgstr "Du bist nicht berechtigt Cron-Events auszuführen."
 
-#: wp-crontrol.php:218
+#: wp-crontrol.php:273
 msgid "Twice Daily"
-msgstr ""
+msgstr "2-mal täglich"
 
-#: wp-crontrol.php:258
-msgid "Successfully deleted the cron schedule <b>%s</b>"
-msgstr "Cron Zeitplan <b>%s</b> erfolgreich gel&ouml;scht"
+#: wp-crontrol.php:291 wp-crontrol.php:292 wp-crontrol.php:298
+#: wp-crontrol.php:299
+msgid "Crontrol"
+msgstr "Crontrol"
 
-#: wp-crontrol.php:269
+#: wp-crontrol.php:329
+msgid "Successfully deleted the cron schedule %s"
+msgstr "Cron-Zeitplan %s wurde erfolgreich gelöscht"
+
+#: wp-crontrol.php:330
+msgid "Successfully added the cron schedule %s"
+msgstr "Cron-Zeitplan %s erfolgreich hinzugefügt"
+
+#: wp-crontrol.php:331
+msgid "Cron schedule not added because there was a problem parsing %s"
+msgstr "Cron-Zeitplan konnte nicht hinzugefügt werden, weil ein Problem beim verarbeiten von %s aufgetreten ist"
+
+#: wp-crontrol.php:347
 msgid "Cron Schedules"
-msgstr "Cron Zeitpl&auml;ne"
+msgstr "Cron-Zeitpläne"
 
-#: wp-crontrol.php:270
-msgid ""
-"Cron schedules are the time intervals that are available to WordPress and "
-"plugin developers to schedule events.  You can only delete cron schedules "
-"that you have created with WP-Crontrol."
-msgstr ""
+#: wp-crontrol.php:348
+msgid "Cron schedules are the time intervals that are available to WordPress and plugin developers to schedule events.  You can only delete cron schedules that you have created with WP-Crontrol."
+msgstr "Cron-Zeitpläne sind Zeitintervalle, die für WordPress und Plugin-Entwickler verfügbar sind um Events festzulegen. Es können nur Cron-Zeitpläne gelöscht werden, die mit WP-Crontrol erstellt wurden."
 
-#: wp-crontrol.php:275
+#: wp-crontrol.php:353
 msgid "Name"
 msgstr "Name"
 
-#: wp-crontrol.php:276 wp-crontrol.php:311
+#: wp-crontrol.php:354 wp-crontrol.php:397
 msgid "Interval"
 msgstr "Intervall"
 
-#: wp-crontrol.php:277
+#: wp-crontrol.php:355
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeige-Name"
 
-#: wp-crontrol.php:278 wp-crontrol.php:354
+#: wp-crontrol.php:356 wp-crontrol.php:590
 msgid "Actions"
-msgstr ""
+msgstr "Aktionen"
 
-#: wp-crontrol.php:301
-msgid "Add new cron schedule"
-msgstr ""
+#: wp-crontrol.php:363
+msgid "You currently have no cron schedules. Add one below!"
+msgstr "Aktuell sind keine Cron-Zeitpläne vorhanden. Füge einen neuen unten hinzu!"
 
-#: wp-crontrol.php:302
-msgid ""
-"Adding a new cron schedule will allow you to schedule events that re-occur "
-"at the given interval."
-msgstr ""
+#: wp-crontrol.php:5
+msgid "WP-Crontrol lets you view and control what's happening in the WP-Cron system"
+msgstr "WP-Crontrol ermöglicht es das WordPress Cron-System zu betrachten und zu steuern"
 
-#: wp-crontrol.php:307
-msgid "Internal name"
-msgstr ""
-
-#: wp-crontrol.php:315
-msgid "Display name"
-msgstr ""
-
-#: wp-crontrol.php:319
-msgid "Add Cron Schedule &raquo;"
-msgstr ""
-
-#: wp-crontrol.php:331
-msgid "Successfully executed the cron entry <b>%s</b>"
-msgstr "Cron Eintrag <b>%s</b> erfolgreich ausgef&uuml;hrt"
-
-#: wp-crontrol.php:332
-msgid "Successfully edited the cron entry <b>%s</b>"
-msgstr "Cron Eintrag <b>%s</b> erfolgreich bearbeitet"
-
-#: wp-crontrol.php:333
-msgid "Successfully created the cron entry <b>%s</b>"
-msgstr "Cron Eintrag <b>%s</b> erfolgreich geschaffen"
-
-#: wp-crontrol.php:334
-msgid "Successfully deleted the cron entry <b>%s</b>"
-msgstr "Cron Eintrag <b>%s</b> erfolgreich gel&ouml;scht"
-
-#: wp-crontrol.php:345
-msgid "WP-Cron Entries"
-msgstr "WP-Cron Eintr&auml;ge"
-
-#: wp-crontrol.php:351
-msgid "Hook Name"
-msgstr ""
-
-#: wp-crontrol.php:352
-msgid "Next Run"
-msgstr ""
-
-#: wp-crontrol.php:353
-msgid "Recurrence"
-msgstr ""
-
-#: wp-crontrol.php:386
-msgid "Edit cron entry"
-msgstr ""
-
-#: wp-crontrol.php:386
-msgid "Add new"
-msgstr ""
-
-#: wp-crontrol.php:392 wp-crontrol.php:422
-msgid "Hook name"
-msgstr ""
-
-#: wp-crontrol.php:395 wp-crontrol.php:425
-msgid "Next run"
-msgstr ""
-
-#: wp-crontrol.php:398 wp-crontrol.php:428
-msgid "Entry schedule"
-msgstr ""
-
-#: wp-crontrol.php:411
-msgid "Modify Cron Entry &raquo;"
-msgstr ""
-
-#: wp-crontrol.php:416
-msgid "Add new cron entry"
-msgstr ""
-
-#: wp-crontrol.php:417
-msgid ""
-"Cron entries trigger actions in your code.  After adding a new cron entry "
-"here, you will need to add a corresponding action hook somewhere in code, "
-"perhaps the <code>functions.php</code> file in your theme."
-msgstr ""
-
-#: wp-crontrol.php:440
-msgid "Add Cron Entry &raquo;"
-msgstr ""
-
-#: wp-crontrol.php:471
-msgid "now"
-msgstr "jetzt"
+#: wp-crontrol.php:90 wp-crontrol.php:98
+msgid "You are not allowed to add new cron events."
+msgstr "Du bist nicht berechtigt neue Cron-Events hinzuzufügen."

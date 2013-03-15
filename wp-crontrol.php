@@ -316,6 +316,7 @@ class Crontrol {
 	}
 	
 	function about_tab() { ?>
+		<style>.tab-about li { list-style: none; }</style>
 		<h1>WP-Crontrol</h1>
 		<p>
 			<a href="http://wordpress.org/extend/plugins/wp-crontrol/" target="_blank">WordPress.org</a> | 
@@ -323,24 +324,27 @@ class Crontrol {
 			<a href="https://github.com/Foe-Services-Labs/wp-crontrol/" target="_blank">GitHub Repository</a> |
 			<a href="https://github.com/Foe-Services-Labs/wp-crontrol/issues/" target="_blank">GitHub Issues</a>
 		</p>
-
-		<h3><?php _e( 'Development', self::ID); ?></h3>
-		<ul>
-			<li><a href="http://www.scompt.com/" target="_blank">Edward Dale</a> | <a href="https://github.com/scompt/" target="_blank">scompt@GitHub</a> | <a href="http://profiles.wordpress.org/scompt/" target="_blank">scompt@WP.org</a></li>
-			<li><a href="http://lud.icro.us/" target="_blank">John Blackbourn</a> | <a href="https://github.com/johnbillion/" target="_blank">johnbillion@GitHub</a> | <a href="http://profiles.wordpress.org/johnbillion/" target="_blank">johnbillion@WP.org</a></li>
+		<ul class="tab-about">
+			<li><b><?php _e( 'Development', self::ID); ?>:</b>
+				<ul>
+					<li><a href="http://www.scompt.com/" target="_blank">Edward Dale</a> | <a href="https://github.com/scompt/" target="_blank">scompt@GitHub</a> | <a href="http://profiles.wordpress.org/scompt/" target="_blank">scompt@WP.org</a></li>
+					<li><a href="http://lud.icro.us/" target="_blank">John Blackbourn</a> | <a href="https://github.com/johnbillion/" target="_blank">johnbillion@GitHub</a> | <a href="http://profiles.wordpress.org/johnbillion/" target="_blank">johnbillion@WP.org</a></li>
+				</ul>
+			</li>
+			<li><b>WordPress:</b>
+				<ul>
+					<li><?php printf( __( 'Requires at least: %s', self::ID), '3.1'); ?></li>
+					<li><?php printf( __( 'Tested up to: %s', self::ID), '3.5.1'); ?></li>
+				</ul>
+			</li>
+			<li><b><?php _e( 'Languages', self::ID); ?>:</b>
+				<ul>
+					<li>English (development), German</li>
+					<li><?php printf( __( 'Help to translate at %s', self::ID), '<a href="https://translate.foe-services.de/projects/wp-crontrol" target="_blank">Translate > WP-Crontrol</a>'); ?></li>
+				</ul>
+			</li>
+			<li><b><?php _e( 'License', self::ID); ?>:</b> <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2 or later</a></li>
 		</ul>
-
-		<h3>WordPress</h3>
-		<ul>
-			<li><?php printf( __( 'Requires at least: %s', self::ID), '3.1'); ?></li>
-			<li><?php printf( __( 'Tested up to: %s', self::ID), '3.5.1'); ?></li>
-		</ul>
-
-		<h3><?php _e( 'Languages', self::ID); ?>:</h3>
-		<p>English (development), German</p>
-		<p><?php printf( __( 'Help to translate at %s', self::ID), '<a href="https://translate.foe-services.de/projects/wp-crontrol" target="_blank">Translate > WP-Crontrol</a>'); ?></p>
-
-		<h3><?php _e( 'License', self::ID); ?>: <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2 or later</a></h3> 
 	<?php 
 	}
 	
@@ -379,9 +383,9 @@ class Crontrol {
 
         ?>
         <style type="text/css">
-            .widefat tbody tr:hover td, .table-hover tbody tr:hover th {
-                background-color: #DDD;
-            }
+            .widefat tr:hover td {
+				background-color: #DDD;
+			}
         </style>
         <div class="wrap">
             <?php screen_icon(); ?>
@@ -529,10 +533,10 @@ class Crontrol {
      */
     function show_cron_form( $is_php, $existing ) {
         if( $is_php ) {
-            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. Using the form below, you can enter the schedule of the action, as well as the PHP code for the action itself. Alternatively, the schedule can be specified from within WordPress and the code for the action in a file on on your server using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-cron#crontrol_form">' . __('this form', self::ID) . '</a>' ) ;
+            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. Using the form below, you can enter the schedule of the action, as well as the PHP code for the action itself. Alternatively, the schedule can be specified from within WordPress and the code for the action in a file on your server using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-cron#crontrol_form">' . __('this form', self::ID) . '</a>' ) ;
             $link = ' (<a href="tools.php?page=crontrol_admin_manage_page#crontrol_form">' . __( 'Add new entry', self::ID) . '</a>)';
         } else {
-            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. A cron entry added using the form below needs a corresponding action hook somewhere in code, perhaps the <code>functions.php</code> file in your theme. It is also possible to create your action hook from within WordPress using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-php-cron#crontrol_form">' . __('this form', self::ID) . '</a>');
+            $helper_text = sprintf( __( 'Cron entries trigger actions in your code. A cron entry added using the form below needs a corresponding action hook somewhere in the code, perhaps the <code>functions.php</code> file in your theme. It is also possible to create your action hook from within WordPress using %s.', self::ID), '<a href="tools.php?page=crontrol_admin_manage_page&action=new-php-cron#crontrol_form">' . __('this form', self::ID) . '</a>');
             $link = ' (<a href="tools.php?page=crontrol_admin_manage_page&amp;action=new-php-cron#crontrol_form">' . __( 'Add new PHP entry', self::ID) . '</a>)';
         }
         if( is_array($existing) ) {
@@ -613,9 +617,9 @@ class Crontrol {
         $this->show_cron_status();
         ?>
         <style type="text/css">
-            .widefat tbody tr:hover td, .table-hover tbody tr:hover th {
-                background-color: #DDD;
-            }
+            .widefat tr:hover td {
+				background-color: #DDD;
+			}
         </style>
         <div class="wrap">
             <?php screen_icon(); ?>

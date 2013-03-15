@@ -133,7 +133,7 @@ msgid ""
 "Cron entries trigger actions in your code. Using the form below, you can "
 "enter the schedule of the action, as well as the PHP code for the action "
 "itself. Alternatively, the schedule can be specified from within WordPress "
-"and the code for the action in a file on on your server using %s."
+"and the code for the action in a file on your server using %s."
 msgstr ""
 
 #: wp-crontrol.php:491 wp-crontrol.php:494
@@ -147,7 +147,7 @@ msgstr ""
 #: wp-crontrol.php:494
 msgid ""
 "Cron entries trigger actions in your code. A cron entry added using the form "
-"below needs a corresponding action hook somewhere in code, perhaps the "
+"below needs a corresponding action hook somewhere in the code, perhaps the "
 "<code>functions.php</code> file in your theme. It is also possible to create "
 "your action hook from within WordPress using %s."
 msgstr ""
