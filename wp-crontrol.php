@@ -54,7 +54,7 @@ class Crontrol {
         define( 'CRONTROL_CRON_JOB', 'crontrol_cron_job');
         $this->json = new Crontrol_JSON();
         if( function_exists('add_action') ) {
-            add_action('init', array(&$this, 'init'));
+            // add_action('init', array(&$this, 'init'));
             add_action('init', array(&$this, 'handle_posts'));
             add_action('admin_menu', array(&$this, 'admin_menu'));
 
@@ -78,14 +78,15 @@ class Crontrol {
     /**
      * Run using the 'init' action.
      */
-    function init() {
-    	$this->load_plugin_textdomain();
+    function init() {   	
     }
 
     /**
      * Handles any POSTs made by the plugin.  Run using the 'init' action.
      */
     function handle_posts() {
+		$this->load_plugin_textdomain();
+		
         if( isset($_POST['new_cron']) ) {
             if( !current_user_can($this->capability) ) die( __( 'You are not allowed to add new cron events.', self::ID));
             check_admin_referer("new-cron");
@@ -287,22 +288,62 @@ class Crontrol {
      * Run using the 'admin_menu' action.
      */
     function admin_menu() {
-	    $page = add_options_page(
+	    $this->options_page = add_options_page(
 			__( 'Crontrol', self::ID), 
 			__( 'Crontrol', self::ID),
 			$this->capability,
 			'crontrol_admin_options_page',
 			array( &$this, 'admin_options_page')
 		);
-	    $page = add_management_page(
+	    $this->manage_page = add_management_page(
 			__( 'Crontrol', self::ID),
 			__( 'Crontrol', self::ID),
 			$this->capability,
 			'crontrol_admin_manage_page',
 			array( &$this, 'admin_manage_page')
 		);
+		add_action("load-$this->options_page", array( &$this, 'help_tabs'));
+		add_action("load-$this->manage_page", array( &$this, 'help_tabs'));
     }
+	
+	function help_tabs() {
+		$screen = get_current_screen();
+		$screen->add_help_tab( array(
+			'id'        => 'wp-crontrol_about',
+			'title'     => __( 'About', self::ID),
+			'callback'  => array( &$this, 'about_tab')
+		));      
+	}
+	
+	function about_tab() { ?>
+		<h1>WP-Crontrol</h1>
+		<p>
+			<a href="http://wordpress.org/extend/plugins/wp-crontrol/" target="_blank">WordPress.org</a> | 
+			<a href="http://wordpress.org/support/plugin/wp-crontrol/" target="_blank">Support</a> |
+			<a href="https://github.com/Foe-Services-Labs/wp-crontrol/" target="_blank">GitHub Repository</a> |
+			<a href="https://github.com/Foe-Services-Labs/wp-crontrol/issues/" target="_blank">GitHub Issues</a>
+		</p>
 
+		<h3><?php _e( 'Development', self::ID); ?></h3>
+		<ul>
+			<li><a href="http://www.scompt.com/" target="_blank">Edward Dale</a> | <a href="https://github.com/scompt/" target="_blank">scompt@GitHub</a> | <a href="http://profiles.wordpress.org/scompt/" target="_blank">scompt@WP.org</a></li>
+			<li><a href="http://lud.icro.us/" target="_blank">John Blackbourn</a> | <a href="https://github.com/johnbillion/" target="_blank">johnbillion@GitHub</a> | <a href="http://profiles.wordpress.org/johnbillion/" target="_blank">johnbillion@WP.org</a></li>
+		</ul>
+
+		<h3>WordPress</h3>
+		<ul>
+			<li><?php printf( __( 'Requires at least: %s', self::ID), '3.1'); ?></li>
+			<li><?php printf( __( 'Tested up to: %s', self::ID), '3.5.1'); ?></li>
+		</ul>
+
+		<h3><?php _e( 'Languages', self::ID); ?>:</h3>
+		<p>English (development), German</p>
+		<p><?php printf( __( 'Help to translate at %s', self::ID), '<a href="https://translate.foe-services.de/projects/wp-crontrol" target="_blank">Translate > WP-Crontrol</a>'); ?></p>
+
+		<h3><?php _e( 'License', self::ID); ?>: <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2 or later</a></h3> 
+	<?php 
+	}
+	
     /**
      * Gives WordPress the plugin's set of cron schedules.
      *
