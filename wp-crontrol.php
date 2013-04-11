@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: WP-Crontrol
-Plugin URI: http://www.scompt.com/projects/wp-crontrol
+Plugin URI: http://wordpress.org/extend/plugins/wp-crontrol/
 Description: WP-Crontrol lets you view and control what's happening in the WP-Cron system
 Author: <a href="http://www.scompt.com/" target="_blank">Edward Dale</a> & <a href="http://lud.icro.us/" target="_blank">John Blackbourn</a>
-Version: 1.1
+Version: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 Text Domain: wp-crontrol
@@ -40,7 +40,8 @@ Domain Path: /languages
   */
 class Crontrol {
 	
-    const ID = 'wp-crontrol';
+    const ID		= 'wp-crontrol';
+	const VERSION	= '1.2';
     
     var $json;
     
@@ -53,7 +54,7 @@ class Crontrol {
     function Crontrol() {
         define( 'CRONTROL_CRON_JOB', 'crontrol_cron_job');
         $this->json = new Crontrol_JSON();
-        if( function_exists('add_action') ) {
+        if ( function_exists('add_action') ) {
             // add_action('init', array(&$this, 'init'));
             add_action('init', array(&$this, 'handle_posts'));
             add_action('admin_menu', array(&$this, 'admin_menu'));
@@ -66,6 +67,10 @@ class Crontrol {
             add_filter('cron_schedules', array(&$this, 'cron_schedules'));
             add_action(CRONTROL_CRON_JOB, array(&$this, 'php_cron_entry'));
         }
+		
+		if ( is_admin() ) {
+			add_filter( 'plugin_row_meta', array( $this, 'set_plugin_meta' ), 10, 2 );
+		}
     }
 
     /**
@@ -746,7 +751,20 @@ class Crontrol {
 			$this->loaded_textdomain = true;
 		}
 	}
-}
+	
+	function set_plugin_meta( $links, $file ) {
+			
+		if ( $file == plugin_basename( __FILE__ ) ) {
+			return array_merge(
+				$links,
+				array( '<a href="https://github.com/wp-repository/wp-crontrol" target="_blank">GitHub</a>' )
+			);
+		}
+
+		return $links;
+	}
+		
+} // END class WP_Crontrol
 
 // PHP4 doesn't have json_encode built-in.
 if( !function_exists('json_encode') ) {
