@@ -81,3 +81,5 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	* Minor cosmetic fixes.
 * __0.1__
 	* Super basic, look at what's in WP-Cron functionality.
+
+# Contributations are always welcome
