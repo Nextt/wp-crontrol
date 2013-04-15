@@ -527,7 +527,7 @@ if ( !class_exists('Crontrol') ) {
 
 			if ( is_wp_error( $status ) ) {	?>
 				<div id="cron-status-error" class="error">
-					<p><?php printf( __( 'There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron jobs on your site may not work. The problem was: %s', self::ID ), '<br /><strong>' . esc_html( $status->get_error_message() . '</strong>' ) ); ?></p>
+					<p><?php printf( __( 'There was a problem spawning a call to the WP-Cron system on your site. This means WP-Cron jobs on your site may not work. The problem was: %s', self::ID ), '<br /><strong>' . esc_html( $status->get_error_message() ) . '</strong>' ); ?></p>
 				</div>
 			<?php
 			}
