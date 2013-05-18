@@ -62,18 +62,21 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 ## Changelog
+* __1.3__ (future release)
+	* added build testing via travis-ci.org
+	* TBD
+* __1.2__
+	* added German translation
 * __1.0__
 	* Input of PHP code for cron entries
 	* Non-repeating cron entries
 	* Handles cron entries with arguments
-
 * __0.3__
 	* Internationalization
 	* Editing/deleting/execution of cron entries
 	* More text, status messages, etc.
 	* Allow a user to enter a schedule entry in a human manner
 	* Looks better on WordPress 2.5
-
 * __0.2__
 	* Fully documented the code.
 	* Fixed the bug that the activate action wouldn't be run if the plugin wasn't in a subdirectory.

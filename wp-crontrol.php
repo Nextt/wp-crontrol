@@ -4,7 +4,7 @@ Plugin Name: WP-Crontrol
 Plugin URI: http://wordpress.org/extend/plugins/wp-crontrol/
 Description: WP-Crontrol lets you view and control what's happening in the WP-Cron system
 Author: <a href="http://www.scompt.com/" target="_blank">Edward Dale</a> & <a href="http://lud.icro.us/" target="_blank">John Blackbourn</a>
-Version: 1.2
+Version: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 Text Domain: wp-crontrol
@@ -44,7 +44,7 @@ if ( !class_exists('Crontrol') ) {
 	class Crontrol {
 
 		const ID		= 'wp-crontrol';
-		const VERSION	= '1.2';
+		const VERSION	= '1.3';
 
 		var $json;
 
@@ -796,4 +796,4 @@ if ( !class_exists('Crontrol') ) {
 	// Get this show on the road
 	$GLOBALS['Crontrol'] = new Crontrol();
 
-}// END if class_exists
+} // END if class_exists
