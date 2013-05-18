@@ -1,4 +1,4 @@
-# WP-Crontrol
+# WP-Crontrol [![Build Status](https://travis-ci.org/wp-repository/wp-crontrol.png?branch=master)](https://travis-ci.org/wp-repository/wp-crontrol)
 __WP-Crontrol lets you view and control what's happening in the WP-Cron system__
 
 ## Details
@@ -8,7 +8,7 @@ __WP-Crontrol lets you view and control what's happening in the WP-Cron system__
 | ----:						| :----				| :---: | :----						| :----				|
 | Requires at least:		| __3.1__			| *		| [GitHub-Repository][1.3]	| [Translate][1.7]	|
 | Tested up to:				| __3.5.1__			| *		| [Issue-Tracker][1.4]		|					|
-| Current stable release:	| __[1.2][1.5]__	| *		| [WordPress.org-SVN][1.6]	| [![Build Status](https://travis-ci.org/wp-repository/wp-crontrol.png?branch=master)](https://travis-ci.org/wp-repository/wp-crontrol) |
+| Current stable release:	| __[1.2][1.5]__	| *		| [WordPress.org-SVN][1.6]	|					|
 
 [1.1]: http://www.scompt.com/projects/wp-crontrol
 [1.2]: http://wordpress.org/extend/plugins/wp-crontrol/
@@ -64,6 +64,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ## Changelog
 * __1.3__ (future release)
 	* added build testing via travis-ci.org
+	* added custom unit tests @TODO
 	* TBD
 * __1.2__
 	* added German translation

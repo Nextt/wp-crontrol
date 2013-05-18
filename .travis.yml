@@ -26,9 +26,14 @@ before_script:
 
 script: phpunit
 
-# wordpress-plugin-tests specific config
-# Tells Travis CI not to run unit tests against the some branch
+# Tells Travis CI NOT to run unit tests against certain branch
 branches:
   except:
     - assets
     - upstream
+
+# Reduce mail notifications by Travis CI to a minimum
+notifications:
+  email:
+    on_success: change
+    on_failure: always
