@@ -62,7 +62,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 
 ## Changelog
-* __1.3__ (future release)
+* __1.3__ _[future plans/roadmap][4.1]_
 	* added build testing via travis-ci.org
 	* added custom unit tests @TODO
 	* TBD
@@ -86,4 +86,4 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 * __0.1__
 	* Super basic, look at what's in WP-Cron functionality.
 
-# Contributations are always welcome
+[4.1]: https://github.com/wp-repository/wp-crontrol/issues

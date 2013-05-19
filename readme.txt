@@ -85,6 +85,11 @@ Email [me](mailto:scompt@scompt.com).
 
 == Changelog ==
 
+= 1.3 =
+* added build testing via travis-ci.org
+* added custom unit tests @TODO
+* TBD
+
 = 1.1 =
 * Bug fixes for running cron jobs and adding cron schedules
 * Added a cron spawn test to check for errors when spawning cron

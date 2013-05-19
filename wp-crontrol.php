@@ -330,8 +330,7 @@ if ( !class_exists('Crontrol') ) {
 				<a href="http://wordpress.org/extend/plugins/wp-crontrol/" target="_blank">WordPress.org</a> | 
 				<a href="http://wordpress.org/support/plugin/wp-crontrol/" target="_blank">Support</a> |
 				<a href="https://github.com/wp-repository/wp-crontrol/" target="_blank">GitHub Repository</a> |
-				<a href="https://github.com/wp-repository/wp-crontrol/issues/" target="_blank">GitHub Issues</a> |
-				<?php printf( __( 'Help to translate at %s', self::ID), '<a href="https://translate.foe-services.de/projects/wp-crontrol" target="_blank">Translate > WP-Crontrol</a>'); ?>
+				<a href="https://github.com/wp-repository/wp-crontrol/issues/" target="_blank">GitHub Issues</a>
 			</p>
 			<ul class="tab-about">
 				<li><b><?php _e( 'Development', self::ID); ?>:</b>
@@ -340,12 +339,7 @@ if ( !class_exists('Crontrol') ) {
 						<li><a href="http://lud.icro.us/" target="_blank">John Blackbourn</a> | <a href="https://github.com/johnbillion/" target="_blank">johnbillion@GitHub</a> | <a href="http://profiles.wordpress.org/johnbillion/" target="_blank">johnbillion@WP.org</a></li>
 					</ul>
 				</li>
-				<li><b>WordPress:</b>
-					<ul>
-						<li><?php printf( __( 'Requires at least: %s', self::ID), '3.1'); ?></li>
-						<li><?php printf( __( 'Tested up to: %s', self::ID), '3.5.1'); ?></li>
-					</ul>
-				</li>
+				<li><b><?php _e( 'Languages', self::ID); ?>:</b> English (development), German, <a href="https://translate.foe-services.de/projects/cets-plugin-stats" target="_blank">more...</a></li> 
 				<li><b><?php _e( 'License', self::ID); ?>:</b> <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2 or later</a></li>
 			</ul>
 		<?php 
