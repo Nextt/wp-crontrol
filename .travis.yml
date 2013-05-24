@@ -31,6 +31,7 @@ branches:
   except:
     - assets
     - upstream
+    - dev
 
 # Reduce mail notifications by Travis CI to a minimum
 notifications:
