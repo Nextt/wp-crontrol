@@ -1,7 +1,6 @@
 # WP-Crontrol [![Build Status](https://travis-ci.org/wp-repository/wp-crontrol.png?branch=master)](https://travis-ci.org/wp-repository/wp-crontrol)
 __WP-Crontrol lets you view and control what's happening in the WP-Cron system__
 
-## Details
 [Homepage][1.1] | [WordPress.org][1.2]
 
 | WordPress					| Version			| *		| Development				|					|
@@ -30,8 +29,7 @@ The admin screen will show you a warning message if your cron system doesn't app
 From the settings screen you can also add, edit and remove cron schedues.
 
 
-## Development
-### Developers
+## Developers
 | Name					| GitHub				| WordPress.org			| Web						| Status				|
 | :----					| :----					| :----					| :----						| ----:					|
 | Edward Dale			| [scompt][2.1.1]		| [kgraeme][2.1.2]		| http://www.scompt.com/	| Active				|
